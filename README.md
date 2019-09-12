@@ -33,7 +33,7 @@ framework.
     System.assertEquals('getInt', mockDetails1[0].stubbedMethodName);
 
 ## Additions:
-Added convenience method to get a mock with a methods return value over-written.
+Added convenience method to get a mock with a method's return value over-written.
 
     // created a mocked object of type MockTester that returns 1000 anytime getInt is called.
     MockTester tester3 = (MockTester) FeatherMock.createMock(MockTester.class, 'getInt', 1000);
