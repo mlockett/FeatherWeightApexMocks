@@ -29,6 +29,26 @@ public class FeatherMock {
 	}
 
 	/**
+	 * get instance of type top mock
+	 *
+	 * @param typeToMock
+	 * @return mock object
+	 */
+	public static Object createMock(Type typeToMock, String methodName, Object returnValue) {
+
+		FeatherMock.SimpleMockProvider simpleMockProvider = new SimpleMockProvider();
+		// mock class of typeToMock.
+		Object returnObject = Test.createStub(typeToMock, simpleMockProvider);
+
+		// track objects
+		providerFromMock.put(returnObject, simpleMockProvider);
+
+		FeatherMock.setReturn(returnObject, methodName, returnValue);
+
+		return returnObject;
+	}
+
+	/**
 	 * get call history for mock
 	 *
 	 * @param mockObject Object

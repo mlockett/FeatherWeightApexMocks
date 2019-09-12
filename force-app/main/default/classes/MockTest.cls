@@ -35,6 +35,9 @@ public with sharing class MockTest {
 
 		Integer myInt2 = tester2.getInt(5);
 
+		MockTester tester3 = (MockTester) FeatherMock.createMock(MockTester.class, 'getInt', 1000);
+		System.assertEquals(1000, tester3.getInt());
+
 		tester.doStuff();
 
 		// verify mocks returned proper values

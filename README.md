@@ -9,7 +9,7 @@ mocks.
 The MockTest class is only a for my testing, but is not required for using the 
 framework.
 
-## Usage
+## Usage:
  
     // create a mock version of the MockTester class.
     MockTester tester = (MockTester) FeatherMock.createMock(MockTester.class);
@@ -32,3 +32,8 @@ framework.
     // verify getInt was called
     System.assertEquals('getInt', mockDetails1[0].stubbedMethodName);
 
+## Additions:
+Added convenience method to get a mock with a methods return value over-written.
+
+    // created a mocked object of type MockTester that returns 1000 anytime getInt is called.
+    MockTester tester3 = (MockTester) FeatherMock.createMock(MockTester.class, 'getInt', 1000);
